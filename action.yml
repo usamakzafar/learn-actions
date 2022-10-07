@@ -6,9 +6,9 @@ inputs:
     required: true
     default: ''
 outputs:
-  time: # id of output
+  - time: # id of output
     description: 'Check timestamp'
-  pass: # id of output
+  - pass: # id of output
     description: 'Valid PR'
 runs:
   using: 'node16'
