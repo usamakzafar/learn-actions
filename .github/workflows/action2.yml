@@ -11,13 +11,16 @@ on:
 
 jobs:
   check-pr-description:
-    - name: Check
-      id: hello
-      uses: usamakzafar/learn-actions@v1.1
-      with:
-        description-text: 'Hello this is www.google.com in the description'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
-    - name: Get pass or fail
-      run: echo "The action result is ${{ steps.hello.outputs.pass }}"
+    runs-on: ubuntu-latest
+    name: A job to check url
+    steps:
+      - name: check
+        id: hello
+        uses: usamakzafar/learn-actions@v1.1
+        with:
+          description-text: 'Hello this is www.google.com in the description'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get pass or fail
+        run: echo "The action result is ${{ steps.hello.outputs.pass }}"
