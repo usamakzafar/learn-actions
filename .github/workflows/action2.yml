@@ -1,5 +1,5 @@
 name: action2
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} is checking for URLs in the string
 on:
   pull_request:
     types:
@@ -11,11 +11,13 @@ on:
 
 jobs:
   check-pr-description:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: jadrol/pr-description-checker-action@v1.0.0
-        id: description-checker
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          exempt-labels: no qa
+    - name: Checking PR description step
+      id: hello
+      uses: usamakzafar/learn-actions@v1.1
+      with:
+        description-text: 'Hello this is www.google.com in the description'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: Get pass or fail
+      run: echo "The action result is ${{ steps.hello.outputs.pass }}"
