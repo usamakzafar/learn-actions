@@ -11,7 +11,7 @@ on:
 
 jobs:
   check-pr-description:
-    - name: Checking PR description step
+    - name: Check
       id: hello
       uses: usamakzafar/learn-actions@v1.1
       with:
