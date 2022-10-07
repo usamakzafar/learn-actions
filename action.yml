@@ -1,0 +1,15 @@
+name: 'PR description Image check'
+description: 'Check if the PR description has an Image'
+inputs:
+  description-text:  # id of input
+    description: 'Description of the PR'
+    required: true
+    default: ''
+outputs:
+  time: # id of output
+    description: 'Check timestamp'
+  pass: # id of output
+    description: 'Valid PR'
+runs:
+  using: 'node16'
+  main: 'index.js'
