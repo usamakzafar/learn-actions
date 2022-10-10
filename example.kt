@@ -1,1 +1,3 @@
-data class Me(val string: String)
+data class Me(val string: String) {
+	// wowowowow stupid
+}
